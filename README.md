@@ -35,7 +35,7 @@ packages used to create this backend
 
 - fastify
 - fastify-cors
-- fastify-helmet
+- @fastify/helmet
 - fastify-plugin
 - @fastify/cors
 - @fastify/jwt
@@ -60,7 +60,7 @@ dev dependencies
 install all dependencies
 
 ```bash
-bun add fastify fastify-cors @fastify/cookie @fastify/rate-limit fastify-helmet fastify-plugin @fastify/cors @fastify/jwt bcrypt nanoid nodemailer sequelize mysql2 zod dotenv@16.4.5
+bun add fastify fastify-cors @fastify/cookie @fastify/helmet @fastify/rate-limit fastify-plugin @fastify/cors @fastify/jwt @fastify/swagger @fastify/swagger-ui bcrypt nanoid nodemailer sequelize mysql2 zod dotenv@16.4.5
 ```
 
 install dev dependencies
