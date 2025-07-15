@@ -27,19 +27,5 @@ app.get("/", async (_req, reply) => {
         .send("Server is fast with fastify");
 });
 
-// Health check
-app.get('/health', async (_req, reply) => {
-    // return { status: 'ok', timestamp: new Date().toISOString() };
-    reply.status(200)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send(new Date().toISOString() + ' Server is healthy');
-});
-
-//not found page app route
-app.get("/*", (_req, reply) => {
-    reply.status(404)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send("Error 404, URL not found");
-});
 
 export default app;
