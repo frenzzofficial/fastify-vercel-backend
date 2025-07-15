@@ -19,7 +19,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export async function createApp(): Promise<FastifyInstance> {
+const createApp = async (): Promise<FastifyInstance> => {
     const app = Fastify({
         logger: {
             level: process.env.NODE_ENV === 'production' ? 'warn' : 'info',
@@ -110,13 +110,22 @@ export async function createApp(): Promise<FastifyInstance> {
     // Connect to database
     // await connectDatabase();
 
+    // Health check endpoint
+    app.get('/', async (_request, reply) => {
+        return reply.send({
+            success: true,
+            message: 'Fastify API is running',
+            timestamp: new Date().toISOString(),
+        });
+    });
+
     // Register routes
     // await app.register(authRoutes, { prefix: '/api/auth' });
     // await app.register(adminRoutes, { prefix: '/api/admin' });
     // await app.register(userRoutes, { prefix: '/api/users' });
 
     // Health check endpoint
-    app.get('/api/health', async (request, reply) => {
+    app.get('/api/health', async (_request, reply) => {
         return reply.send({
             success: true,
             message: 'API is running',
@@ -125,7 +134,7 @@ export async function createApp(): Promise<FastifyInstance> {
     });
 
     // 404 handler
-    app.setNotFoundHandler((request, reply) => {
+    app.setNotFoundHandler((_request, reply) => {
         return reply.status(404).send({
             success: false,
             message: 'Route not found',
