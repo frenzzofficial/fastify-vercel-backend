@@ -15,10 +15,8 @@ app.get(
             },
         },
     },
-    async (_req: FastifyRequest, reply: FastifyReply) => {
-        return reply.status(200).type("text/html").send(html);
-    }
-);
+    async (_req: FastifyRequest, reply: FastifyReply) =>
+        reply.status(200).type("text/html").send(html));
 
 // Health check
 app.get("/health",
@@ -31,13 +29,9 @@ app.get("/health",
             },
         },
     },
-    async (_req, reply) => {
-        // return { status: 'ok', timestamp: new Date().toISOString() };
-        reply
-            .status(200)
-            .header("Content-Type", "application/json; charset=utf-8")
-            .send(new Date().toISOString() + " Server is healthy");
-    });
+    async (_req, reply) => reply.
+        status(200).header("Content-Type", "application/json; charset=utf-8")
+        .send(new Date().toISOString() + " Server is healthy"));
 
 //not found page app route
 app.get("/*", (_req, reply) => {
