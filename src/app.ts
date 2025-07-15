@@ -16,7 +16,7 @@ app.register(cors, {
 });
 
 app.register(jwt, {
-    secret: process.env.JWT_SECRET || 'your-super-secret-jwt-key'
+    secret: process.env.JWT_SECRET || ''
 });
 
 // Routes
