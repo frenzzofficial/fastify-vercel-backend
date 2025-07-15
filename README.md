@@ -126,25 +126,34 @@ This will start the Vercel development server at `http://localhost:3000/api`
 
 ### 6. Deploy to Vercel
 
-1. Install Vercel CLI:
+1. Check if the latest version of @vercel/node is installed:
+   for ex @vercel/node@5.3.5 for this project
+
+```bash
+npm show @vercel/node versions
+```
+
+2. Install Vercel CLI:
 
 ```bash
 npm install -g vercel
 ```
 
-2. Login to Vercel:
+3. Login to Vercel:
 
 ```bash
 vercel login
 ```
 
-3. Deploy:
+4. Deploy:
 
 ```bash
+
 vercel --prod
+
 ```
 
-4. Add environment variables in Vercel dashboard:
+5. Add environment variables in Vercel dashboard:
    - Go to your project settings
    - Add all environment variables from your `.env.local`
 
