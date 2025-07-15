@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "vercel dev",
-    "build": "tsc",
+    "deploy:prod": "vercel deploy --prod",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/api/index.js",
     "type-check": "tsc --noEmit"
   },
