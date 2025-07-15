@@ -7,12 +7,12 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 // Export handler for Vercel
 export default async function handler(req: VercelRequest, res: VercelResponse) {
 
-    app.register(cors, {
+    await app.register(cors, {
         origin: process.env.FRONTEND_URL || 'http://localhost:3000',
         credentials: true
     });
 
-    app.register(jwt, {
+    await app.register(jwt, {
         secret: process.env.JWT_SECRET || ''
     });
 
