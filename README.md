@@ -66,7 +66,7 @@ bun add fastify fastify-cors @fastify/cookie @fastify/helmet @fastify/rate-limit
 install dev dependencies
 
 ```bash
-bun add --dev typescript @types/node @types/nodemailer @types/bcrypt @types/dotenv vercel
+bun add --dev vercel typescript @types/node @types/nodemailer @types/bcrypt @vercel/node @types/dotenv
 ```
 
 ### 2. Database Setup
