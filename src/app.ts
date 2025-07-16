@@ -10,6 +10,14 @@ export async function createApp(): Promise<FastifyInstance> {
         },
     });
 
+    app.get('/', async (request, reply) => {
+        return reply.send({
+            success: true,
+            message: 'HomePage Eoute',
+        });
+
+    });
+
     // Health check endpoint
     app.get('/api/health', async (request, reply) => {
         return reply.send({
