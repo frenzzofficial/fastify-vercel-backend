@@ -60,13 +60,13 @@ dev dependencies
 install all dependencies
 
 ```bash
-bun add fastify fastify-cors @fastify/cookie @fastify/helmet @fastify/rate-limit fastify-plugin @fastify/cors @fastify/jwt @fastify/swagger @fastify/swagger-ui bcrypt nanoid nodemailer sequelize mysql2 zod dotenv@16.4.5
+bun add fastify @fastify/cookie @fastify/helmet @fastify/rate-limit fastify-plugin @fastify/cors @fastify/jwt @fastify/swagger @fastify/swagger-ui bcrypt nanoid nodemailer sequelize mysql2 zod dotenv@16.4.5
 ```
 
 install dev dependencies
 
 ```bash
-bun add --dev vercel typescript @types/node @types/nodemailer @types/bcrypt @vercel/node @types/dotenv
+bun add --dev vercel typescript @types/node @types/nodemailer @types/bcrypt @vercel/node
 ```
 
 ### 2. Database Setup
